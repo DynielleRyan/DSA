@@ -5,11 +5,22 @@
 
 int main(int argc, char *argv[]) {
 	
-	 stackArrayList newStack;
-	 newStack.top = -1;
-	
-	
-	
-	int topElement = stack_peek(&myStack);
+ stackArrayList stack = createStack();
+
+    stack_push(&stack, 1);
+    stack_push(&stack, 2);
+    stack_push(&stack, 3);
+
+    display(&stack);
+    visualize(&stack);
+
+    int popped;
+    if (stack_pop(&stack, &popped)) {
+        printf("Popped: %d\n", popped);
+    }
+
+    display(&stack);
+    visualize(&stack);
+
 	return 0;
 }
