@@ -72,10 +72,32 @@ int stack_peek(stackArrayList *s){
 	return s->data[s->top];
 }
 
-void display(){
+void display(stackArrayList *s) {
+    if (s->top == -1) {
+        printf("Stack is empty\n");
+    } else {
+        printf("Stack elements:\n");
+        for (int i = s->top; i >= 0; i--) {
+            printf("%d\n", s->data[i]);
+        }
+    }
 }
-	
+
+void visualize(stackArrayList *s) {
+    if (s->top == -1) {
+        printf("Stack is empty\n");
+    } else {
+        for (int i = s->top; i >= 0; i--) {
+            if (i == s->top) {
+                printf("[%d] : %d (top)\n", i, s->data[i]);
+            } else {
+                printf("[%d] : %d\n", i, s->data[i]);
+            }
+        }
+    }
 }
+
+
 
 
 
