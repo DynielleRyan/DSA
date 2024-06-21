@@ -18,3 +18,5 @@ void deleteValue(Set *set, int value);
 void findUnion(const Set *set1, const Set *set2, Set *result);
 void findIntersection(const Set *set1, const Set *set2, Set *result);
 void displaySet(const Set *set);
+
+#endif
