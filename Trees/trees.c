@@ -3,20 +3,14 @@
 #include <stdlib.h>
 #include "trees.h"
 
-
-//add, delete,traversal,BFS,DFS using queues,in,pre,post
-
-
-
 NodePtr createNode(Product item) {
-    NodePtr newNode = (NodePtr)malloc(sizeof(NodePtr));
+    NodePtr newNode = (NodePtr)malloc(sizeof(NodeType));
     if (newNode != NULL) {
         newNode->item = item;
         newNode->left = newNode->right = NULL;
     }
     return newNode;
 }
-
 
 NodePtr insert(NodePtr root, Product item) {
     if (root == NULL) {
@@ -32,7 +26,6 @@ NodePtr insert(NodePtr root, Product item) {
     return root;
 }
 
-
 NodePtr minValueNode(NodePtr node) {
     NodePtr current = node;
     while (current && current->left != NULL) {
@@ -40,7 +33,6 @@ NodePtr minValueNode(NodePtr node) {
     }
     return current;
 }
-
 
 NodePtr deleteNode(NodePtr root, char* prodName) {
     if (root == NULL) {
@@ -69,7 +61,6 @@ NodePtr deleteNode(NodePtr root, char* prodName) {
     return root;
 }
 
-
 void inorder(NodePtr root) {
     if (root != NULL) {
         inorder(root->left);
@@ -77,7 +68,6 @@ void inorder(NodePtr root) {
         inorder(root->right);
     }
 }
-
 
 void preorder(NodePtr root) {
     if (root != NULL) {
@@ -87,7 +77,6 @@ void preorder(NodePtr root) {
     }
 }
 
-
 void postorder(NodePtr root) {
     if (root != NULL) {
         postorder(root->left);
@@ -95,7 +84,6 @@ void postorder(NodePtr root) {
         printf("%s ", root->item.prodName);
     }
 }
-
 
 void bfs(NodePtr root) {
     if (root == NULL) {
@@ -120,4 +108,3 @@ void bfs(NodePtr root) {
         }
     }
 }
-
